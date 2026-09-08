@@ -19,7 +19,7 @@ def simular(n, k, p, rodadas=50000):
 
 
 valores_p = [0.1, 0.3, 0.5, 0.7, 0.9, 0.95, 0.99]
-valores_n = [5, 9]
+valores_n = [6, 10]
 
 print("\nComparação analítico x experimental\n")
 print(f"{'n':<5}{'k':<8}{'p':<8}{'analítico':<14}{'experimental':<14}")
