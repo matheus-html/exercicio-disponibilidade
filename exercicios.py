@@ -31,3 +31,34 @@ def consulta(n, p):
 
 def atualizacao(n, p):
     return p ** n
+
+# Exercicio 1.2: Calculo analitico
+
+n_valores = [2, 4, 6, 8, 10, 12]
+p_fixo = 0.9
+
+y_k1 = []
+for n in n_valores:
+    y_k1.append(disponibilidade(n, 1, p_fixo))
+
+y_kn2 = []
+for n in n_valores:
+    y_kn2.append(disponibilidade(n, n // 2, p_fixo))
+
+y_kn = []
+for n in n_valores:
+    y_kn.append(disponibilidade(n, n, p_fixo))
+
+plt.figure()
+plt.plot(n_valores, y_k1, marker="o", label="k=1")
+plt.plot(n_valores, y_kn2, marker="o", label="k=n/2")
+plt.plot(n_valores, y_kn, marker="o", label="k=n")
+plt.xlabel("n")
+plt.ylabel("disponibilidade")
+plt.title(f"Disponibilidade analítica (p={p_fixo})")
+plt.legend()
+plt.grid(True)
+plt.savefig("analitico.png")
+plt.close()
+
+# Exercicio 1.2: Simulador estocástico
